@@ -187,11 +187,99 @@ bool Card::operator < (Card card2) const {
 /* *************************************************
  Hand class
  ************************************************* */
-// Implemente the member functions of the Hand class here.
+//need default hand() constructor
+Hand::Hand(){
+    Card randomPlayerCard;
+    playerHand.push_back(randomPlayerCard.get_rank());
+    
+    Card randomDealerCard;
+    dealerHand.push_back(randomDealerCard.get_rank());
+
+}
+
+//will ask player if he wants to be dealt a card and will do so until user says no or until his total value is 7.5 or greater
+void Hand::dealToPlayer(){
+    
+    //player will only have option to be dealt cards if his total is less than 7.5
+    while (getPlayerTotal() < 7.5) {
+
+    
+    //string that will record whether or not player wants another hand
+    std::string dealCard;
+    
+    std::cout << "Do you want another card (y/n)?" << std::endl;
+    std::cin >> dealCard;
+    
+    while (dealCard == "y") {
+        
+        Card randomCard;
+        
+        //will account for rank of card, and it's effect on total number, but not suit of card 
+        playerHand.push_back(randomCard.get_rank());
+
+        std::cout << "Do you want another card (y/n)?";
+        std::cin >> dealCard;
+    }
+}
+}
+
+//accessor, returns the total sum of the players card values
+int Hand::getPlayerTotal(){
+    
+    int playerTotal = 0;
+    for (size_t i = 1; i < playerHand.size(); ++i) {
+        playerTotal = playerTotal + playerHand[i];
+    }
+    
+    return playerTotal;
+}
+
+// will automatically deal cards to dealer until his or her card total reaches 5.5
+void Hand::dealToDealer(){
+    
+    //player will only have option to be dealt cards if his total is less than 7.5
+    while (getDealerTotal() < 5.5) {
+
+        Card randomCard;
+            
+        //will account for rank of card, and it's effect on total number, but not suit of card 
+        dealerHand.push_back(randomCard.get_rank());
+
+    }
+}
+
+
+//accessor, returns the total sum of the players card values
+int Hand::getDealerTotal(){
+    
+    int dealerTotal = 0;
+    for (size_t i = 1; i < dealerHand.size(); ++i) {
+        dealerTotal = dealerTotal + dealerHand[i];
+    }
+    
+    return dealerTotal;
+}
 
 
 
 /* *************************************************
  Player class
  ************************************************* */
-// Implemente the member functions of the Player class here.
+
+//default constructor
+Player::Player(int m){
+    money = m;
+}
+
+int Player::getMoney(){
+    return money;
+}
+
+void Player::loseMoney(int betAmount){
+    money = money - betAmount;
+}
+
+void Player::winMoney(int betAmount){
+    money = money + betAmount;
+}
+

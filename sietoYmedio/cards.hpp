@@ -59,28 +59,43 @@ public:
     // A vector of Cards
     Hand();
     
-    // Will ask the player if he wants to be dealt another card, and will automatically 
-    void Deal();
+    // Will ask the player if he wants to be dealt another card until he says no or his total reaches 7.5. 
+    void dealToPlayer();
+    
+    //After player's cards are final, will automatically deal cards until the dealer until his total reaches 5.5.
+    void dealToDealer();
+    
+    //accessors
+    int getPlayerTotal();
+    int getDealerTotal();
+    
+    
     
 private:
     
-    //private member fields for player and dealer
-    std::vector<Card> player;
-    std::vector<Card> dealer;
+    //private member fields for player and dealer's hands
+    std::vector<int> playerHand;
+    std::vector<int> dealerHand;
+    
 };
 
 
 class Player {
 public:
     // Constructor. 
-    //    Assigns initial amount of money
+    // Assigns initial amount of money
     Player(int m);
     
-    // You decide what functions you'll need...
+    //accessor
+    int getMoney();
+    
+    //will update player's money total based on who won and how much the bet was for
+    void winMoney(int betAmount);
+    void loseMoney(int betAmount);
     
 private:
     int money;
-    // You decide what extra fields (if any) you'll need...
+    
 };
 
 #endif
