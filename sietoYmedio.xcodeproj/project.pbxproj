@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8D407C991E370E5A002D508A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8D407C981E370E5A002D508A /* main.cpp */; };
+		8D407CA11E370EB8002D508A /* cards.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8D407C9F1E370EB8002D508A /* cards.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		8D407C951E370E5A002D508A /* sietoYmedio */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = sietoYmedio; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D407C981E370E5A002D508A /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		8D407C9F1E370EB8002D508A /* cards.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cards.cpp; sourceTree = "<group>"; };
+		8D407CA01E370EB8002D508A /* cards.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = cards.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				8D407C981E370E5A002D508A /* main.cpp */,
+				8D407C9F1E370EB8002D508A /* cards.cpp */,
+				8D407CA01E370EB8002D508A /* cards.hpp */,
 			);
 			path = sietoYmedio;
 			sourceTree = "<group>";
@@ -120,6 +125,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D407C991E370E5A002D508A /* main.cpp in Sources */,
+				8D407CA11E370EB8002D508A /* cards.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
