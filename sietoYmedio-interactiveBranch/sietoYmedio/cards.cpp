@@ -232,7 +232,7 @@ void Hand::dealToPlayer(){
             playerHandEnglishSuit.push_back(randomCard.get_english_suit());
             
             std::cout << "Do you want another card (y/n)?";
-            
+            std::cin >> dealCard;
             
             cardNumber = cardNumber + 1;
             
