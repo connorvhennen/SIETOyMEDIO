@@ -17,7 +17,7 @@ using namespace std;
 void turn(Player& userPlayer);
 
 void game(){
-     
+    
 }
 
 // Stub for main
@@ -39,7 +39,10 @@ void turn(Player& userPlayer){
     Hand playerHand;
     Hand dealerHand;
     
-    std::cout << "Your cards:" << "/n" << "	    ";
+    std::cout << "Your cards:" << std::endl;
+    std::cout << "	    " << playerHand.getPlayerRank(0) << " de " << playerHand.getPlayerSuit(0) << "      (" << playerHand.getPlayerEnglishRank(0) << " of " << playerHand.getPlayerEnglishSuit(0) << ")." << std::endl;
+    std::cout << "Your total is " << playerHand.getPlayerTotal() << ".  ";
+    
     playerHand.dealToPlayer();
     dealerHand.dealToPlayer();
     

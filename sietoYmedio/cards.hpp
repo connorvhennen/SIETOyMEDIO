@@ -69,13 +69,41 @@ public:
     int getPlayerTotal();
     int getDealerTotal();
     
+    std::string printCard(Hand playerHand,const int num);
     
+    std::string getPlayerSuit(const int num);
+    std::string getPlayerRank(const int num);
+    
+    std::string getDealerSuit(const int num);
+    std::string getDealerRank(const int num);
+    
+    std::string getPlayerEnglishSuit(const int num);
+    std::string getPlayerEnglishRank(const int num);
+    
+    std::string getDealerEnglishSuit(const int num);
+    std::string getDealerEnglishRank(const int num);
     
 private:
     
-    //private member fields for player and dealer's hands
-    std::vector<int> playerHand;
-    std::vector<int> dealerHand;
+    //private member fields for values of player and dealer's hands
+    std::vector<int> playerHandValue;
+    std::vector<int> dealerHandValue;
+    
+    //private member fields for suits of player and dealer's hands
+    std::vector<std::string> playerHandSuit;
+    std::vector<std::string> dealerHandSuit;
+    
+    //private member fields for ranks of player and dealer's hands
+    std::vector<std::string> playerHandRank;
+    std::vector<std::string> dealerHandRank;
+    
+    //private member fields for ranks of player and dealer's hands in English
+    std::vector<std::string> playerHandEnglishRank;
+    std::vector<std::string> dealerHandEnglishRank;
+    
+    //private member fields for suits of player and dealer's hands in English
+    std::vector<std::string> playerHandEnglishSuit;
+    std::vector<std::string> dealerHandEnglishSuit;
     
 };
 
